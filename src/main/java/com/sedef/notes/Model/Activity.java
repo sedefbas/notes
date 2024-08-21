@@ -24,9 +24,10 @@ public class Activity {
 
     private String description;
 
-    private LocalDateTime startTime; // Başlangıç zamanı
-    private LocalDateTime endTime;   // Bitiş zamanı
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
     private LocalDate date;
+    private Long duration;
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)

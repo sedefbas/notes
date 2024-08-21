@@ -16,25 +16,27 @@ public class CategoryService {
     private final CategoryRepository categoryRepository;
     private final UserService userService;
 
-    public Category add(CategoryRequest request){
-        Category category = new Category();
+    public Category add(CategoryRequest request) {
         User user = userService.getbyId(request.getUserId());
-        category.setId(0);
+        Category category = new Category();
         category.setName(request.getName());
         category.setUser(user);
-        return category;
+        return categoryRepository.save(category); // Veritabanına kaydediyoruz
     }
 
-    public void delete(int categoryId){
+    public void delete(int categoryId) {
+        if (!categoryRepository.existsById(categoryId)) {
+            throw new RuntimeException("Category not found");
+        }
         categoryRepository.deleteById(categoryId);
     }
 
-    public List<Category> getByUserId(int userId){
+    public List<Category> getByUserId(int userId) {
         return categoryRepository.findByUserId(userId);
     }
 
-    public Category getById(int categoryId){
-        return categoryRepository.findById(categoryId).get();
+    public Category getById(int categoryId) {
+        return categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new RuntimeException("Category not found")); // Hata yönetimi burada yapılır
     }
-
 }

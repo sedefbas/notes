@@ -1,4 +1,5 @@
-import com.sedef.notes.Businnes.CategoryService;
+package com.sedef.notes.Businnes;
+
 import com.sedef.notes.Dto.ActivityRequest;
 import com.sedef.notes.Model.Activity;
 import com.sedef.notes.Model.Category;
@@ -7,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.Optional;
+
 
 @Service
 @RequiredArgsConstructor

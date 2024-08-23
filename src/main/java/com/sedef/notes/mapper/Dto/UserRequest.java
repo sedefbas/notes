@@ -1,11 +1,11 @@
-package com.sedef.notes.Dto;
+package com.sedef.notes.mapper.Dto;
 
 import lombok.Data;
 
 @Data
 public class UserRequest {
     private String firstName;
-    private String Surname;
+    private String surname;
     private String email;
     private String password;
 }

@@ -1,4 +1,4 @@
-package com.sedef.notes.Dto;
+package com.sedef.notes.mapper.Dto;
 
 import lombok.Data;
 

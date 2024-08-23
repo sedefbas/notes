@@ -1,7 +1,7 @@
 package com.sedef.notes.Controller;
 
 import com.sedef.notes.Businnes.CategoryService;
-import com.sedef.notes.Dto.CategoryRequest;
+import com.sedef.notes.mapper.Dto.CategoryRequest;
 import com.sedef.notes.Model.Category;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

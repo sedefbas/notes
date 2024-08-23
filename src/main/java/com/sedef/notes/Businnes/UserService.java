@@ -1,7 +1,8 @@
 package com.sedef.notes.Businnes;
 
-import com.sedef.notes.Dto.UserRequest;
+import com.sedef.notes.mapper.Dto.UserRequest;
 import com.sedef.notes.Model.User;
+import com.sedef.notes.mapper.UserMapper;
 import com.sedef.notes.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,14 +14,10 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository repository;
+    private final UserMapper mapper;
 
     public User add(UserRequest request){
-        User user = new User();
-        user.setId(0);
-        user.setFirstName(request.getFirstName());
-        user.setSurname(request.getSurname());
-        user.setEmail(request.getEmail());
-        user.setPassword(request.getPassword());
+        User user = mapper.toUser(request);
         return repository.save(user);
     }
 

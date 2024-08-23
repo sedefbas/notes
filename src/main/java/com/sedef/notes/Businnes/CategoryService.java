@@ -1,6 +1,6 @@
 package com.sedef.notes.Businnes;
 
-import com.sedef.notes.Dto.CategoryRequest;
+import com.sedef.notes.mapper.Dto.CategoryRequest;
 import com.sedef.notes.Model.Category;
 import com.sedef.notes.Model.User;
 import com.sedef.notes.repository.CategoryRepository;
